@@ -1,6 +1,12 @@
 {
   "name": "DigitalReceipts",
   "app_id": "",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://sleepingsloth.com/bochackathon2018"
+    }
+],
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
