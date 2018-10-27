@@ -2,12 +2,12 @@ page-home {
 
 }
 
-
-
 .title{
   text-align:center; font-size:28px;
+  opacity: 0.75;
+  //font-weight: bold;
+  //color: rgba(0, 0, 0, 1);
 }
-
 
 ion-icon {
     font-size: 40px; //Preferred size here
@@ -15,25 +15,20 @@ ion-icon {
     padding-right: 26px;
 }
 
-
-
-
-
 ion-content {
 	width: 100wh;
 	height: 100vh;
 	color: #fff;
-	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
+	background: linear-gradient(-45deg, #005AA7, #e4fdff);
+	background-size: 100% 100%;
+	//-webkit-animation: Gradient 15s ease infinite;
+	//-moz-animation: Gradient 15s ease infinite;
+	//animation: Gradient 15s ease infinite;
 }
 
 .scroll-content{
   paddding: 0px;
 }
-
 
 @-webkit-keyframes Gradient {
 	0% {
@@ -81,7 +76,6 @@ h6 {
 	right: 0;
 	left: 0;
 }
-
 
 .toolbar-background {
   background-color: #FFF;
