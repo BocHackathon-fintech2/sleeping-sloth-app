@@ -8,16 +8,24 @@
 <ion-content  class="backg" style="padding-top:82px; margin-bottom:100px;">
 
 
+  <ion-list>
+      <ng-container *ngFor="let rl of receiptList" >
+        <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:5px; border-radius:16px;">
+          <ion-thumbnail item-start>
+              <img src="assets/imgs/supermarket.png" *ngIf="rl.vendor_category == 'Supermarket' " style="width:100px; height:100px;"/>
+                  <img src="assets/imgs/uniqlo.png" *ngIf="rl.vendor_category == 'Clothing Store' " style="width:100px; height:100px;"/>
+                      <img src="assets/imgs/mister.png" *ngIf="rl.vendor_category == 'Electronic Store' " style="width:100px; height:100px;"/>
+
+          </ion-thumbnail>
+          <h2>{{rl.vendor_name}}</h2>
+          <p>{{rl.date}}</p>
+          <button ion-button clear item-end>{{rl.total}}€</button>
+        </ion-item>
+      </ng-container>
+  </ion-list>
 
 
 
 
-
-
-
-
-
-
-  
 
 </ion-content >

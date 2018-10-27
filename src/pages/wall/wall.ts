@@ -16,6 +16,7 @@ import { Http, Headers } from '@angular/http';
 })
 export class WallPage {
   public apiURL: any;
+  public receiptList: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,  public platform: Platform ) {
     if ( this.platform.is('android') ) {
@@ -26,7 +27,7 @@ export class WallPage {
          this.apiURL = "http://sleepingsloth.com/bochackathon2018";
        }else{
          this.apiURL = "/api";
-         
+
        }
   }
 
@@ -45,13 +46,13 @@ let headers = new Headers ();
             headers.append('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
             headers.append('Access-Control-Allow-Headers', 'Content-Type,Authorization,Upgrade-Insecure-Requests');
 
-    this.http.post(this.apiURL+'/api/v1/getReceipt?id=32', {headers: headers})
+    this.http.post(this.apiURL+'/api/v1/getReceipt?id=99798951', {headers: headers})
             //.map(res => res.json())
        .subscribe(data => {
        console.log("receipts");
             console.log(data);
-          //  this.pendingQuotes = JSON.parse(data['_body']);
-            //console.log(this.pendingQuotes);
+             this.receiptList = JSON.parse(data['_body']);
+
        });
 
   }
