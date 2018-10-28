@@ -4,9 +4,25 @@ page-home {
 
 .title{
   text-align:center; font-size:28px;
-  opacity: 0.75;
+  //opacity: 0;
   //font-weight: bold;
-  //color: rgba(0, 0, 0, 1);
+//  color: rgba(255,255,255, 0.9);
+//  background-color: white;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: red;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: red;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: red;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: red;
+  opacity: 1;
 }
 
 ion-icon {
@@ -19,7 +35,7 @@ ion-content {
 	width: 100wh;
 	height: 100vh;
 	color: #fff;
-	background: linear-gradient(-45deg, #6C5B7B, #355C7D);
+	background: linear-gradient(#1cb5e0, #000046);
 	background-size: 100% 100%;
 	//-webkit-animation: Gradient 15s ease infinite;
 	//-moz-animation: Gradient 15s ease infinite;
@@ -64,6 +80,10 @@ ion-content {
 	100% {
 		background-position: 0% 50%
 	}
+}
+
+input::-webkit-input-placeholder {
+  color: white;
 }
 
 h1,

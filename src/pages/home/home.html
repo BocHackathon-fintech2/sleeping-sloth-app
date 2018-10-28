@@ -4,24 +4,46 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content  class="backg" style="padding-top:82px; margin-bottom:100px;">
-
+<ion-content class="backg" style="padding-top:82px; margin-bottom:100px;">
+    <div style="text-align:center; margin:50px 0% 50px 0%;">
+    <img src="assets/imgs/logo2.png"/>
+    </div>
     <ion-list>
 
-    <ion-item style="margin:0 25% 0 25%; width:50%;">
-      <ion-label>Username</ion-label>
-      <ion-input type="text"></ion-input>
+    <ion-item no-lines style="margin:0% 25% 0 25%; width:50%; background-color: transparent;
+      border-radius: 20px !important;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+    ">
+      <ion-label style="color: white !important; opacity:1;">Username</ion-label>
+      <ion-input type="text" placeholder="username" style="color: white !important; opacity:1;">
+      </ion-input>
     </ion-item>
 
-    <ion-item style="margin:0 25% 0 25%; width:50%;">
-      <ion-label>Password</ion-label>
-      <ion-input type="password"></ion-input>
+    <ion-item no-lines style="margin:0 25% 0 25%; width:50%; background-color: transparent;
+      border-radius: 20px !important;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 5px;
+      padding-top: 5px;">
+      <ion-label style="color: white !important; opacity:1;">Password</ion-label>
+      <ion-input type="password" placeholder="password" style="color: white !important; opacity:1;">
+      </ion-input>
     </ion-item>
+
+    <div padding style="margin:0 25% 0 25%; width:50%; text-align: center;">
+      <button ion-button (click)="navPush()" style="background: #000046;">SIGN IN</button>
+    </div>
+
+    <div padding style="margin:0 25% 0 25%; width:50%; text-align: center;">
+      <a (click)="navPush()" style="color: white !important; opacity:1; text-transform: none; background-color: transparent; text-decoration: none;">Forgot Password</a>
+    </div>
+    <div padding style="margin:0 25% 0 25%; width:50%; text-align: center;">
+    <a (click)="navPush()" style="color: white !important; opacity:1; text-transform: none; background-color: transparent; text-decoration: none;">Create New Account</a>
+    </div>
 
   </ion-list>
-
-  <div padding>
-    <button ion-button (click)="navPush()">SIGN IN</button>
-  </div>
 
 </ion-content >
