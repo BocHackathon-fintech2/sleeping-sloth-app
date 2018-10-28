@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
+
+
+import { MenuPage } from '../menu/menu';
 /**
  * Generated class for the DetailsPage page.
  *
@@ -23,6 +26,7 @@ export class DetailsPage {
   public date: any;
   public total: any;
   public itemList: any;
+  public location: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,   public platform: Platform) {
     this.receiptId = navParams.get("id");
@@ -30,6 +34,7 @@ export class DetailsPage {
         this.name = navParams.get("name");
           this.date = navParams.get("date");
             this.total = navParams.get("total");
+              this.location = navParams.get("location");
 
     if ( this.platform.is('android') ) {
       //|| this.platform.is('android')
@@ -69,6 +74,14 @@ export class DetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
+  }
+
+  goToMenu(){
+    console.log('menu gogogog');
+    this.navCtrl.push( MenuPage,  {
+
+    });
+
   }
 
 }

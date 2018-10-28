@@ -1,7 +1,13 @@
 <ion-header>
   <ion-navbar>
-      <ion-title style="text-align:center;">Digital Wall</ion-title>
+      <ion-title style="text-align:center;">Receipt Wall</ion-title>
+      <ion-buttons  end >
 
+
+              <button item-right clear (click)="goToMenu()" style="background-color:transparent;">
+                      <ion-icon name="apps" style="color:#FFF" ></ion-icon>
+                  </button>
+            </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -10,7 +16,7 @@
 
   <ion-list>
       <ng-container *ngFor="let rl of receiptList" >
-        <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:5px; border-radius:16px;" (click)="loadPageDetails(rl.id,rl.vendor_category,rl.vendor_name,rl.date,rl.total)">
+        <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:5px; border-radius:16px;" (click)="loadPageDetails(rl.id,rl.vendor_category,rl.vendor_name,rl.date,rl.total,rl.location)">
           <ion-thumbnail item-start>
               <img src="assets/imgs/supermarket.png" *ngIf="rl.vendor_category == 'Supermarket' " style="width:100px; height:100px;"/>
                   <img src="assets/imgs/uniqlo.png" *ngIf="rl.vendor_category == 'Clothing Store' " style="width:100px; height:100px;"/>

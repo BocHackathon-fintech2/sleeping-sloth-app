@@ -5,6 +5,7 @@ import { Http, Headers } from '@angular/http';
 
 
 import { DetailsPage } from '../details/details';
+import { MenuPage } from '../menu/menu';
 
 /**
  * Generated class for the WallPage page.
@@ -62,15 +63,24 @@ let headers = new Headers ();
   }
 
 
-loadPageDetails(id:any,cat:any,name:any,date:any,total:any){
+loadPageDetails(id:any,cat:any,name:any,date:any,total:any,location:any){
   console.log(id);
     this.navCtrl.push( DetailsPage,  {
       id: id,
       cat: cat,
       name:name,
       date: date,
-      total: total
+      total: total,
+      location: location
     });
+
+}
+
+goToMenu(){
+  console.log('menu gogogog');
+  this.navCtrl.push( MenuPage,  {
+
+  });
 
 }
 

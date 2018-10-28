@@ -11,13 +11,15 @@ import { HomePage } from '../pages/home/home';
 
 import { WallPage } from '../pages/wall/wall';
 import { DetailsPage } from '../pages/details/details';
+import { MenuPage } from '../pages/menu/menu';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     WallPage,
-    DetailsPage
+    DetailsPage,
+    MenuPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { DetailsPage } from '../pages/details/details';
     MyApp,
     HomePage,
     WallPage,
-    DetailsPage
+    DetailsPage,
+    MenuPage
   ],
   providers: [
     StatusBar,
