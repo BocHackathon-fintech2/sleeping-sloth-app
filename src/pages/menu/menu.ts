@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
+import { WallPage } from '../wall/wall';
+import { BenefitsPage } from '../benefits/benefits';
+import { AnalyticsPage } from '../analytics/analytics';
+import { ProfilePage } from '../profile/profile';
+
 /**
  * Generated class for the MenuPage page.
  *
@@ -21,5 +27,31 @@ export class MenuPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
   }
+
+  goToReceipts(){
+    this.navCtrl.push( WallPage,  {
+
+    });
+  }
+
+  goToAnalytics(){
+    this.navCtrl.push( AnalyticsPage,  {
+
+    });
+  }
+
+  goToBenefits(){
+    this.navCtrl.push( BenefitsPage,  {
+
+    });
+  }
+
+  goToProfile(){
+    this.navCtrl.push( ProfilePage,  {
+
+    });
+  }
+
+
 
 }

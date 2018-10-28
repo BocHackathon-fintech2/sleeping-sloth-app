@@ -13,13 +13,20 @@ import { WallPage } from '../pages/wall/wall';
 import { DetailsPage } from '../pages/details/details';
 import { MenuPage } from '../pages/menu/menu';
 
+import { AnalyticsPage } from '../pages/analytics/analytics';
+import { BenefitsPage } from '../pages/benefits/benefits';
+import { ProfilePage } from '../pages/profile/profile';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     WallPage,
     DetailsPage,
-    MenuPage
+    MenuPage,
+    AnalyticsPage,
+    BenefitsPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,10 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     WallPage,
     DetailsPage,
-    MenuPage
+    MenuPage,
+    AnalyticsPage,
+    BenefitsPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
