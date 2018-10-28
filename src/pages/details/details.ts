@@ -17,10 +17,20 @@ import { Http, Headers } from '@angular/http';
 export class DetailsPage {
 
   public receiptId: any;
-    public apiURL: any;
+  public apiURL: any;
+  public cat: any;
+  public name: any;
+  public date: any;
+  public total: any;
+  public itemList: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,   public platform: Platform) {
     this.receiptId = navParams.get("id");
+      this.cat = navParams.get("cat");
+        this.name = navParams.get("name");
+          this.date = navParams.get("date");
+            this.total = navParams.get("total");
+
     if ( this.platform.is('android') ) {
       //|| this.platform.is('android')
          // This will only print when on iOS
@@ -48,6 +58,11 @@ export class DetailsPage {
                     this.itemList = JSON.parse(data['_body']);
 
               });
+
+
+
+
+
 
 
   }

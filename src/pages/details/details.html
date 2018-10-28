@@ -15,4 +15,25 @@
 
 <ion-content padding>
 
+<div style=" text-align:center;">
+  <img src="assets/imgs/supermarket.png" *ngIf="cat == 'Supermarket' " style="width:200px; height:200px;"/>
+  <img src="assets/imgs/uniqlo.png" *ngIf="cat == 'Clothing Store' " style="width:200px; height:200px;"/>
+  <img src="assets/imgs/mister.png" *ngIf="cat == 'Electronic Store' " style="width:200px; height:200px;"/>
+</div>
+
+
+
+
+    <ion-list>
+          <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:5px; border-radius:16px;" (click)="loadPageDetails(rl.id,rl.vendor_category,rl.vendor_name,rl.date,rl.total)">
+
+
+            <h2>{{name}}</h2>
+            <p>{{date}}</p>
+            <button ion-button clear item-end>Total: {{total}}€</button>
+          </ion-item>
+    </ion-list>
+
+
+
 </ion-content>
