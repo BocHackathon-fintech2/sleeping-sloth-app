@@ -31,6 +31,22 @@ public userID: any = "99798951";
 public supermarketTotal: any = 0.0;
 public clothingTotal: any = 0.0;
 public electronicsTotal: any = 0.0;
+public apiURL: any;
+public itemList: any;
+public freshFood: any = 0.0;
+public drinks: any = 0.0;
+public alcoholicDrinks: any = 0.0;
+public houseCleaning: any = 0.0;
+public accessories: any = 0.0;
+public womenClothing: any = 0.0;
+public menClothing: any = 0.0;
+public footwear: any = 0.0;
+public childClothing: any = 0.0;
+public phone: any = 0.0;
+public printer: any = 0.0;
+public mouse: any = 0.0;
+public keyboard: any = 0.0;
+public laptop: any = 0.0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,   public platform: Platform) {
 
@@ -74,11 +90,23 @@ public electronicsTotal: any = 0.0;
                             this.electronicsTotal = this.electronicsTotal + parseFloat(il.total);
                         }
                     }
-                      console.log(this.supermarketTotal);
-                        console.log(this.clothingTotal);
-                          console.log(this.electronicsTotal);
 
 
+
+                    for (let il of this.itemList) {
+                      this.http.post(this.apiURL+'/api/v1/getItems?id='+il.id, {headers: headers})
+                         .subscribe(data => {
+                              var temp = JSON.parse(data['_body']);
+                              if (temp.category == "freshFood") {
+                                this.freshFood = this.freshFood + parseFloat(temp.price);
+                              }
+                              console.log("items");
+                              console.log(temp);
+                         });
+                      }
+
+                      console.log("items");
+                      console.log(this.freshFood);
 
 
 
@@ -111,16 +139,14 @@ public electronicsTotal: any = 0.0;
 
                            });
 
-
-
                            this.barChart = new Chart(this.barCanvas.nativeElement, {
 
                                   type: 'bar',
                                   data: {
-                                      labels: ["Electronics", "Clothing", "Supermarket"],
+                                      labels: ["Fresh Food", "Drinks", "Alcoholic Drinks", "House Cleaning Products", "Drinks", "Drinks", "Drinks", "Drinks", "Drinks", "Drinks", "Drinks", "Drinks", "Drinks", "Drinks", "Drinks"],
                                       datasets: [{
-                                          label: '# of Votes',
-                                          data: [this.electronicsTotal, this.clothingTotal, this.supermarketTotal],
+                                          label: 'Euro',
+                                          data: [this.electronicsTotal, this.clothingTotal, this.supermarketTotal, this.electronicsTotal, this.clothingTotal, this.supermarketTotal, this.electronicsTotal, this.clothingTotal, this.supermarketTotal, this.electronicsTotal, this.clothingTotal, this.supermarketTotal, this.clothingTotal, this.supermarketTotal],
                                           backgroundColor: [
                                               'rgba(255, 99, 132, 0.2)',
                                               'rgba(54, 162, 235, 0.2)',
@@ -191,12 +217,10 @@ public electronicsTotal: any = 0.0;
 
   ionViewWillEnter(){
 
-
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AnalyticsPage');
-
 
   }
 
