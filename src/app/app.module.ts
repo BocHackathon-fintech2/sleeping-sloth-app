@@ -17,6 +17,7 @@ import { AnalyticsPage } from '../pages/analytics/analytics';
 import { BenefitsPage } from '../pages/benefits/benefits';
 import { ProfilePage } from '../pages/profile/profile';
 
+
 @NgModule({
   declarations: [
     MyApp,
