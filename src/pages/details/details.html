@@ -25,14 +25,42 @@
 
 
     <ion-list>
-          <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:5px; border-radius:16px;" (click)="loadPageDetails(rl.id,rl.vendor_category,rl.vendor_name,rl.date,rl.total)">
+          <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:5px; border-radius:2px;" (click)="loadPageDetails(rl.id,rl.vendor_category,rl.vendor_name,rl.date,rl.total)">
 
 
             <h2>{{name}}</h2>
+            <p>{{cat}}</p>
             <p>{{date}}</p>
             <button ion-button clear item-end>Total: {{total}}€</button>
           </ion-item>
     </ion-list>
+
+
+    <ion-list>
+        <ng-container *ngFor="let il of itemList" >
+          <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:1px; border-radius:2px;" >
+
+            <h2>{{il.item_name}}</h2>
+            <p>Quantity: {{il.quantity}}</p>
+            <p *ngIf="il.category == 'freshFood' ">Fresh Food</p>
+            <p *ngIf="il.category == 'drinks' ">Drink</p>
+            <p *ngIf="il.category == 'alcoholicDrinks' ">Alcoholic Drink</p>
+            <p *ngIf="il.category == 'houseCleaning' ">House Cleaning Product</p>
+            <p *ngIf="il.category == 'accessories' ">Accessories</p>
+            <p *ngIf="il.category == 'womenClothing' ">Women Clothing</p>
+            <p *ngIf="il.category == 'menClothing' ">Men Clothing</p>
+            <p *ngIf="il.category == 'footwear' ">Footwear</p>
+            <p *ngIf="il.category == 'childClothing' ">Children Clothing</p>
+            <p *ngIf="il.category == 'phone' ">Phone</p>
+            <p *ngIf="il.category == 'printer' ">Printer</p>
+            <p *ngIf="il.category == 'mouse' ">Mouse</p>
+            <p *ngIf="il.category == 'keyboard' ">Keyboard</p>
+            <p *ngIf="il.category == 'laptop' ">Laptop</p>
+            <button ion-button clear item-end>{{il.price}}€</button>
+          </ion-item>
+        </ng-container>
+    </ion-list>
+
 
 
 
