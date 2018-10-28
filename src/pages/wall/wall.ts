@@ -58,5 +58,13 @@ let headers = new Headers ();
   }
 
 
+loadPageDetails(id:any){
+  console.log(id);
+    this.navCtrl.push( DetailsPage,  {
+      id: id
+    });
+
+}
+
 
 }

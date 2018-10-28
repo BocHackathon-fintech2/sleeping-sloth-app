@@ -10,7 +10,7 @@
 
   <ion-list>
       <ng-container *ngFor="let rl of receiptList" >
-        <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:5px; border-radius:16px;">
+        <ion-item style="max-width:400px; margin-left:auto; margin-right:auto; margin-top:5px; border-radius:16px;" (click)="loadPageDetails(rl.id)">
           <ion-thumbnail item-start>
               <img src="assets/imgs/supermarket.png" *ngIf="rl.vendor_category == 'Supermarket' " style="width:100px; height:100px;"/>
                   <img src="assets/imgs/uniqlo.png" *ngIf="rl.vendor_category == 'Clothing Store' " style="width:100px; height:100px;"/>
