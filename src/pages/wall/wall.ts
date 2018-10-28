@@ -62,10 +62,14 @@ let headers = new Headers ();
   }
 
 
-loadPageDetails(id:any){
+loadPageDetails(id:any,cat:any,name:any,date:any,total:any){
   console.log(id);
     this.navCtrl.push( DetailsPage,  {
-      id: id
+      id: id,
+      cat: cat,
+      name:name,
+      date: date,
+      total: total
     });
 
 }
